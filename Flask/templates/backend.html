@@ -1,0 +1,91 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/">About</a></li>
+
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid" style="background-color: hsla(209, 50%, 50%, 0.25);">
+  <h3 style="font-weight:900;font-size:50px;padding-left:20px;color: hsla(209,100%,41%,1);">Your Result is.....&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Back End Development</h3>
+</div>
+<h2 style="font-weight:700;padding-left:20px;padding-top:20px;">What Is a Back-End Developer?</h2>
+<div style="padding-left:50px;padding-top:20px;padding-bottom:20px;">
+  <h3 style="color: hsla(200,100%,0%,0.65);">Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly. The challenge associated with front end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing.</h3>
+</div>
+<div class="container-fluid" style="padding-top:20px;padding-bottom:20px;background-color: hsla(209,50%,50%,0.25);">
+  <p align="center"><iframe style="float:center" width="1000" height="455" src="https://www.youtube.com/embed/0Kv_k4ypj6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+</div>
+
+<h2 style="font-weight:700;padding-left:20px;padding-top:20px;">10 Must-Have Back End Developer Skills</h2>
+<div style="padding-left:50px;padding-top:20px;padding-bottom:20px;">
+  <h2>1. HTML/CSS</h2>
+  <h3 style="padding-left:10px;">HyperText Markup Language (HTML) is the standard markup language used to create web pages. A markup language is your way of making notes in a digital document that can be distinguished from regular text. It’s the most basic building block you’ll need for developing websites.</h3>
+  <h2>2. JavaScript/jQuery</h2>
+  <h3 style="padding-left:10px;">Another MAJOR tool in your front end developer toolbox is going to be JavaScript (JS). Where HTML is a markup language and CSS is a style sheet language, JS is the first language I’ve mentioned that’s a bonafide programming language. What’s the difference? Where HTML and CSS determine the presentation of a page, JS determines the function.</h3>
+  <h2>3. CSS and JavaScript Frameworks</h2>
+  <h3 style="padding-left:10px;">CSS and JavaScript frameworks are collections of CSS or JS files that do a bunch of the work for you by providing common functionality (think logging into a website or searching a blog). Instead of starting with an EMPTY text document you start with a code file that has lots of awesome JS already in it.</h3>
+  <h3 style="padding-left:10px;">To make things even MORE fun you can use frameworks together. It’s common to pair Bootstrap with another JavaScript framework like AngularJS. The content is handled by Angular, and the look & feel is handled by Bootstrap (with some CSS sprinkled in, too).</h3>
+  <h2>4. CSS Preprocessing</h2>
+  <h3 style="padding-left:10px;">Using a CSS preprocessor like Sass, LESS, or Stylus, you’re able to write code in the preprocessor’s language (allowing you to do things that might be a huge pain with plain old CSS). The preprocessor then converts that code to CSS so it will work on your website.</h3>
+  <h2>5. Version Control/Git</h2>
+  <h3 style="padding-left:10px;">Version control software—like open source stalwart Git—is a tool you’ll use to track those changes so you can go back to a previous version of your work and find out what went wrong without tearing the whole thing down</h3>
+  <h2>6. Responsive Design</h2>
+  <h3 style="padding-left:10px;">These days we use any number of computers, phones, and tablets to look at web pages. Ever notice how these pages adjust themselves to the device you’re using without you doing anything on your end? This is due to responsive design. Understanding responsive design principles and how to implement them on the coding side is key to front end development.</h3>
+  <h2>7. Testing/Debugging</h2>
+  <h3 style="padding-left:10px;">Testing is a big part of the front end development process, but fortunately, it’s another area where there are frameworks to help you. Programs like Mocha and Jasmine are designed to speed up and simplify your testing process.</h3>
+
+</div>
+<h1 style="font-weight:700;padding-left:20px;padding-top:20px;">Sources for Front End Developer Courses: </h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-9 col-md-4" ><img height="250" width="500" src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Udacity_logo.png"></div>
+    <div class="col-xs-3 col-md-8">
+      <h1 style="font-weight:900;color: hsla(209,100%,41%,1);">Udacity Nanodegree</h1>
+      <h2 style="padding-left:20px;">Modules Covered in the Course<h2>
+          <h5><ul style="list-style-type:square;">
+            <li>Web Foundations</li>
+            <li>JavaScript and the DOM</li>
+            <li>Web Accessibility</li>
+            <li>Object-Oriented JavaScript</li>
+            <li>JavaScript Tools & Testing</li>
+            <li>Front-End Applications</li> </h5>
+
+          </ul>
+        <h3><a href="https://in.udacity.com/course/front-end-web-developer-nanodegree--nd001">Click here to view the Nanodegree course</a></h3>
+    </div>
+  </div>
+</div>
+
+<div style="height:30px;"
+
+</div>
+
+<style>
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: black;
+color: white;
+text-align: center;
+}
+</style>
+<div class="footer">
+  <p>Course Recommendation</p>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+
+<link rel="stylesheet"
+      href="{{url_for('static', filename = 'stylez.css')}}"</link>
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+{% endblock %}

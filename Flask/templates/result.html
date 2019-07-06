@@ -1,0 +1,176 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/">About</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container-fluid" style="width:1505px;">
+  <div class="jumbotron" style="background-image:url(https://www.xmple.com/wallpaper/orange-purple-gradient-linear-1920x1080-c2-7b68ee-ff4500-a-120-f-14.svg);height:390px;">
+
+      <span style="border:1px ;border-radius:6px;">
+        <h1 style="color:white;padding:70px;background-color: hsla(0, 0%, 0%, 0.10);font-size:30px;">Course Recommendation<hr>Using Machine Learning to Enable Academic Perfromance</h1>
+
+      </span>
+
+  </div>
+
+</div>
+
+  <hr>
+  <div id="heading">
+    <h1 style="padding-left:10px;">These are your answers...</h1>
+  </div>
+  <hr>
+
+
+
+    <div style="height:40px; background-color: hsla(173, 50%, 50%, 0.25);">
+      <h3 style="padding-left:20px;">Name: {{ name }}</h3>
+    </div>
+
+    <div style="height:40px; background-color: hsla(230, 50%, 50%, 0.25);">
+      <h3 style="padding-left:20px;">Country: {{ country }}</h3>
+    </div>
+
+
+
+    <div style="height:65px;background-color: hsla(266, 50%, 50%, 0.25);">
+      <h3 style="padding-left:20px;">Do you prefer a Full Time or a Part Time career?</h3>
+      <h4 style="padding-left:35px;"> - {{ employement }}</h4>
+    </div>
+
+    <div style="height:65px;background-color: hsla(279, 50%, 50%, 0.25);">
+      <h3 style="padding-left:20px;">What is your educational qualification?</h3>
+      <h4 style="padding-left:35px;"> - {{ education }}</h4>
+    </div>
+
+    <div style="height:65px;background-color: hsla(293, 50%, 50%, 0.25);">
+      <h3 style="padding-left:20px;">What is your field of study?</h3>
+      <h4 style="padding-left:35px;"> - {{ major }}</h4>
+    </div>
+
+    <div style="height:65px;background-color: hsla(340, 50%, 50%, 0.25);">
+      <h3 style="padding-left:20px;">What is your area of expertise?</h3>
+      <h4 style="padding-left:35px;"> - {{ devtype }}</h4>
+    </div>
+
+<style>
+.middle{
+  position: absolute;
+  top: 155%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+
+}
+.btn{
+  position: relative;
+  display: block;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 30px 0;
+  border: 2px solid #c669b4;
+  padding: 14px 300px;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 1s all ease;
+  background: hsla(340, 50%, 50%, 0.25)
+}
+.btn::before{
+  background: #c669b4;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+.btn1::before{
+  width: 0%;
+  height: 100%;
+}
+
+.btn1:hover::before{
+  width: 100%;
+}
+
+</style>
+  <div style="background-color: hsla(340, 50%, 50%, 0.25);" class="container-fluid">
+    <div class="middle">
+        {% if myprediction == 0 %}
+
+          <h1><a class="btn btn1" href="{{ url_for('dataanalytics')}}">CLICK HERE TO VIEW YOUR RESULTS</a></h1>
+
+        {% elif myprediction == 1 %}
+          <h1><a class="btn btn1" href="{{ url_for('fullstack')}}">CLICK HERE TO VIEW YOUR RESULTS</a></h1>
+
+        {% elif myprediction == 2 %}
+          <h1><a class="btn btn1" href="{{ url_for('backend')}}">CLICK HERE TO VIEW YOUR RESULTS</a></h1>
+
+        {% elif myprediction == 3 %}
+          <h1><a class="btn btn1" href="{{ url_for('frontend')}}">CLICK HERE TO VIEW YOUR RESULTS</a></h1>
+
+        {% elif myprediction == 4 %}
+          <h1><a class="btn btn1" href="{{ url_for('mobile')}}">CLICK HERE TO VIEW YOUR RESULTS</a></h1>
+
+        {% elif myprediction == 5 %}
+          <h1><a class="btn btn1" href="{{ url_for('design')}}">CLICK HERE TO VIEW YOUR RESULTS</a></h1>
+
+        {% elif myprediction == 6 %}
+          <h1><a class="btn btn1" href="{{ url_for('database')}}">CLICK HERE TO VIEW YOUR RESULTS</a></h1>
+
+        {% elif myprediction == 7 %}
+          <h1><a class="btn btn1" href="{{ url_for('software')}}">SOFTWARE</a></h1>
+
+        {% endif %}
+      </div>
+  </div>
+</div>
+  <div style="height:25px;">
+
+  </div>
+</div>
+
+<style>
+.footer {
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: black;
+color: white;
+text-align: center;
+}
+</style>
+
+<div class="footer">
+<p>Course Recommendation</p>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<style type="text/css">
+  .jumbotron{
+     background-image:url(F:\Final Project\Flask\banner-students.jpg);
+     background-size:cover;
+     text-align:center
+  }
+</style>
+<link rel="stylesheet"
+      href="{{url_for('static', filename = 'stylez.css')}}"</link>
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+{% endblock %}

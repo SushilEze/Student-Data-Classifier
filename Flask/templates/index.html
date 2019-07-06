@@ -1,0 +1,169 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+
+    <ul class="nav navbar-nav">
+      <li><a href="/">Home</a></li>
+      <li><a href="/">About</a></li>
+
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid" style="width:1505px;" >
+  <div class="jumbotron" style="background-image:url(https://i.stack.imgur.com/0ASXA.jpg);background-size:cover; height:390px;text-align:center;color:white;">
+      <span style="border:1px ;border-radius:6px;">
+        <h1 style="padding:70px;background-color: hsla(0, 0%, 0%, 0.15);font-size:30px;">Course Recommendation<hr>Enabling Course Recommendation Using Machine Learning</h1>
+
+      </span>
+
+  </div>
+</div>
+<!-- Main Input For Receiving Query to our ML -->
+
+
+		  <div class="container-fluid">
+        <h2>Enter Your Information</h2>
+        <form action="{{ url_for('predict')}}" method="POST">
+          <div class="form-group">
+
+              <label for="name">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name" name="namequery">
+
+          </div>
+          <div class="form-group">
+
+              <label for="email">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your Email ID" name="emailid">
+
+          </div>
+
+
+<div class="form-group">
+  <label for="country">Select Country</label>
+  <select class="form-control" id="country" name="country">
+    <option>Argentina</option>
+    <option>Australia</option>
+    <option>Austria</option>
+    <option>Belgium</option>
+    <option>Brazil</option>
+    <option>Canada</option>
+    <option>Chile</option>
+    <option>Colombia</option>
+    <option>Croatia</option>
+    <option>Denmark</option>
+    <option>France</option>
+    <option>Germany</option>
+    <option>Greece</option>
+    <option>India</option>
+    <option>Indonesia</option>
+    <option>Ireland</option>
+    <option>Israel</option>
+    <option>Italy</option>
+    <option>Kenya</option>
+    <option>Lebanon</option>
+    <option>Netherlands</option>
+    <option>Nigeria</option>
+    <option>Poland</option>
+    <option>Russian</option>
+    <option>Slovakia</option>
+    <option>South Africa</option>
+    <option>Spain</option>
+    <option>Sweden</option>
+    <option>Thailand</option>
+    <option>Turkey</option>
+    <option>Ukraine</option>
+    <option>United Kingdom</option>
+    <option>United States</option>
+    <option>Vietnam</option>
+  </select>
+</div>
+
+
+<div class="form-group">
+  <label for="employement">Do you want to work full-time or part time?</label>
+  <select class="form-control" id="employement" name = "employement" >
+    <option>Full Time</option>
+    <option>Part Time</option>
+  </select>
+</div>
+
+
+<div class="form-group">
+  <label for="education">Select your educational qualification</label>
+  <select class="form-control" id="education" name = "education" >
+    <option>Associate degree</option>
+    <option>Bachelor's degree (BA, BS, B.Eng., etc.)</option>
+    <option>Master’s degree (MA, MS, M.Eng., MBA, etc.)</option>
+    <option>Secondary school (e.g. American high school, German Realschule or Gymnasium, etc.)</option>
+    <option>Some college/university study without earning a degree</option>
+  </select>
+</div>
+
+  <div class="form-group">
+    <label for="major">Select your Major</label>
+    <select class="form-control" id="major" name = "major">
+      <option>Computer science, computer engineering, or software engineering</option>
+      <option>Another engineering discipline (ex. civil, electrical, mechanical)</option>
+      <option>A business discipline (ex. accounting, finance, marketing)</option>
+      <option>A humanities discipline (ex. literature, history, philosophy)</option>
+      <option>A natural science (ex. biology, chemistry, physics)</option>
+      <option>A social science (ex. anthropology, psychology, political science)</option>
+      <option>Fine arts or performing arts (ex. graphic design, music, studio art)</option>
+      <option>Information systems, information technology, or system administration</option>
+      <option>Mathematics or statistics</option>
+      </select>
+      </div>
+
+      <div class="form-group">
+        <label for="devtype">Are of Interest/Expertise</label>
+        <select class="form-control" id="devtype" name = "devtype">
+          <option>Python, TensorFlow, PyTorch</option>
+          <option>HTML, CSS, JavaScript, SQL</option>
+          <option>PHP, Ruby, Java</option>
+          <option>HTML, CSS, SASS</option>
+          <option>React Native, Android Studio</option>
+          <option>Art, Illustration</option>
+          <option>MySQL, Oracle</option>
+          <option>OOP, Scrum</option>
+          </select>
+      </div>
+
+
+
+
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <div style="height:100px;">
+
+          </div>
+        </form>
+      </div>
+
+      <style>
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+  </style>
+
+  <div class="footer">
+    <p>Course Recommendation</p>
+  </div>
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+
+<link rel="stylesheet"
+      href="{{url_for('static', filename = 'stylez.css')}}"</link>
+<link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+{% endblock %}
